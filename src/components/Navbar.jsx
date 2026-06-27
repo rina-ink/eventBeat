@@ -11,8 +11,8 @@ const Navbar = () => {
     };
     
     return (
-    <nav className="py-4">
-        <ul className="flex justify-center gap-8 list-none p-0">
+    <nav className="border-b border-stone-200 bg-white/60 py-5 backdrop-blur-sm">
+        <ul className="flex justify-center gap-10 list-none p-0 text-sm lowercase tracking-widest text-stone-700">
             <li>
                 <NavLink to="/">Home</NavLink>
             </li>

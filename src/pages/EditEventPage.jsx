@@ -214,7 +214,7 @@ const EditEventPage = () => {
             <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded bg-amber-700 p-4 text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="w-full rounded bg-amber-200 p-4 text-white transition-opacity hover:opacity-90 disabled:opacity-50"
             >
                 {isSubmitting
                 ? "Saving..."

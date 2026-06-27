@@ -99,13 +99,13 @@ const EventDetailsPage = () => {
                 <div className="mt-6 flex gap-4">
                     <button 
                     onClick={handleEdit}
-                    className="rounded bg-amber-700 px-4 py-2 text-white transition-opacity hover:opacity-90">
+                    className="rounded bg-olive-400 px-4 py-2 text-white transition-opacity hover:opacity-90">
                         Edit Event
                     </button>
                     
                     <button
                     onClick={handleDelete}
-                    className="rounded bg-zinc-800 px-4 py-2 text-white transition-opacity hover:opacity-90"
+                    className="rounded bg-zinc-600 px-4 py-2 text-white transition-opacity hover:opacity-90"
                     >
                         Delete Event
                     </button>

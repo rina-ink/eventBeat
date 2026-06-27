@@ -36,6 +36,14 @@ const EventDetailsPage = () => {
     }, [id]);
     
     const handleDelete = async () => {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this event?"
+        );
+        
+        if (!confirmed) {
+            return;
+        }
+        
         try {
             const token = localStorage.getItem("token");
             
@@ -57,6 +65,10 @@ const EventDetailsPage = () => {
         } catch (error) {
             setError(error.message);
         }
+    };
+
+    const handleEdit = () => {
+        navigate(`/events/${id}/edit`);
     };
     
     return (
@@ -85,7 +97,9 @@ const EventDetailsPage = () => {
                 </p>
                 
                 <div className="mt-6 flex gap-4">
-                    <button className="rounded bg-amber-700 px-4 py-2 text-white transition-opacity hover:opacity-90">
+                    <button 
+                    onClick={handleEdit}
+                    className="rounded bg-amber-700 px-4 py-2 text-white transition-opacity hover:opacity-90">
                         Edit Event
                     </button>
                     

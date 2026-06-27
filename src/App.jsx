@@ -12,6 +12,8 @@ import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import CreateEventPage from "./pages/CreateEventPage";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -40,7 +42,11 @@ const App = () => {
 
         <Route
           path="create-event"
-          element={<CreateEventPage />}
+          element={
+            <ProtectedRoute>
+              <CreateEventPage />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -182,8 +182,7 @@ const CreateEventPage = () => {
                 : "Create Event"}
             </button>
         </form>
-    </main>
-    );
+    </main>);
 };
 
 export default CreateEventPage;

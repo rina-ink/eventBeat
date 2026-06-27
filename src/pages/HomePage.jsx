@@ -37,9 +37,13 @@ const HomePage = () => {
 
   return (
     <main className="max-w-6xl mx-auto p-6">
-      <h1 className="mb-8 text-4xl font-bold">
-        Events
+      <h1 className="mb-2 text-4xl font-semibold text-stone-620">
+        events
       </h1>
+
+      <p className="mb-10 text-stone-500 italic">
+        discover experiences across Europe
+      </p>
 
       {isLoading && (
         <p className="text-lg">

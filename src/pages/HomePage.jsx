@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import EventCard from "../components/EventCard";
 
+import EventMap from "../components/EventMap";
+
 const HomePage = () => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
@@ -49,6 +51,10 @@ const HomePage = () => {
         <p className="text-red-500">
           {error}
         </p>
+      )}
+
+      {Array.isArray(events) && events.length > 0 && (
+        <EventMap events={events} />
       )}
 
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

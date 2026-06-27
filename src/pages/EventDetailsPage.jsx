@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const EventDetailsPage = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     
     const [event, setEvent] = useState(null);
     const [error, setError] = useState("");
@@ -34,6 +35,42 @@ const EventDetailsPage = () => {
         fetchEvent();
     }, [id]);
     
+    const handleDelete = async () => {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this event?"
+        );
+        
+        if (!confirmed) {
+            return;
+        }
+        
+        try {
+            const token = localStorage.getItem("token");
+            
+            const response = await fetch(
+                `http://localhost:3001/api/events/${id}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            
+            if (!response.ok) {
+                throw new Error("Failed to delete event.");
+            }
+            
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    const handleEdit = () => {
+        navigate(`/events/${id}/edit`);
+    };
+    
     return (
     <main className="max-w-3xl mx-auto p-6">
         {isLoading && <p>Loading event...</p>}
@@ -43,13 +80,13 @@ const EventDetailsPage = () => {
         {event && (
             <article className="rounded-lg border p-6 shadow-sm">
                 <h1 className="mb-4 text-4xl font-bold">
-                    {event.title}  
+                    {event.title}
                 </h1>
                 
                 <p className="mb-4 text-lg">
                     {event.description}
                 </p>
-
+                
                 <p>
                     <strong>Date:</strong>{" "}
                     {new Date(event.date).toLocaleString()}
@@ -58,12 +95,24 @@ const EventDetailsPage = () => {
                 <p>
                     <strong>Location:</strong> {event.location}
                 </p>
+                
+                <div className="mt-6 flex gap-4">
+                    <button 
+                    onClick={handleEdit}
+                    className="rounded bg-amber-700 px-4 py-2 text-white transition-opacity hover:opacity-90">
+                        Edit Event
+                    </button>
+                    
+                    <button
+                    onClick={handleDelete}
+                    className="rounded bg-zinc-800 px-4 py-2 text-white transition-opacity hover:opacity-90"
+                    >
+                        Delete Event
+                    </button>
+                </div>
             </article>
-        
         )}
-        
     </main>
-    
     );
 };
 

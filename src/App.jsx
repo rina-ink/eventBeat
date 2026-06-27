@@ -13,6 +13,7 @@ import SignUpPage from "./pages/SignUpPage";
 import CreateEventPage from "./pages/CreateEventPage";
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import EditEventPage from "./pages/EditEventPage";
 
 const App = () => {
   return (
@@ -28,6 +29,11 @@ const App = () => {
         <Route
           path="events/:id"
           element={<EventDetailsPage />}
+        />
+
+        <Route
+          path="events/:id/edit"
+          element={<EditEventPage />}
         />
 
         <Route

@@ -58,3 +58,18 @@ a {
 .dark-theme .leaflet-popup-close-button:hover {
     color: #ffffff;
 }
+
+/* Dark theme - Leaflet attribution */
+.dark-theme .leaflet-control-attribution {
+    background-color: #2c2521;
+    color: #cfc1b4;
+    border-top-left-radius: 6px;
+}
+
+.dark-theme .leaflet-control-attribution a {
+    color: #efe3d7;
+}
+
+.dark-theme .leaflet-control-attribution a:hover {
+    color: #ffffff;
+}

@@ -1,8 +1,13 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-const EventMap = ({ events }) => {
+const EventMap = ({ events, isDarkTheme }) => {
     return (
-    <section className="mb-8 overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
+    <section className={
+        isDarkTheme
+        ? "mb-8 overflow-hidden rounded-2xl border border-[#4a4038]"
+        : "mb-8 overflow-hidden rounded-2xl border border-stone-200 shadow-sm"
+    }
+    >
         <MapContainer
         center={[52.52, 13.405]}
         zoom={4}
@@ -11,7 +16,11 @@ const EventMap = ({ events }) => {
         >
             <TileLayer
             attribution='&copy; OpenStreetMap contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            url={
+                isDarkTheme
+                ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            }
             />
             
             {events.map((event) => (

@@ -4,7 +4,7 @@ import EventCard from "../components/EventCard";
 
 import EventMap from "../components/EventMap";
 
-const HomePage = () => {
+const HomePage = ({ isDarkTheme }) => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -58,7 +58,7 @@ const HomePage = () => {
       )}
 
       {Array.isArray(events) && events.length > 0 && (
-        <EventMap events={events} />
+        <EventMap events={events} isDarkTheme={isDarkTheme}/>
       )}
 
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -67,6 +67,7 @@ const HomePage = () => {
             <EventCard
               key={event.id}
               event={event}
+              isDarkTheme={isDarkTheme}
             />
           ))}
       </section>

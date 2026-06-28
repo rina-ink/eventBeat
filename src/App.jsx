@@ -25,8 +25,8 @@ const App = () => {
       <div
         className={
           isDarkTheme
-            ? "min-h-screen bg-[#1f1b18] text-stone-200"
-            : "min-h-screen bg-[#f1ebe1] text-stone-700"
+            ? "dark-theme min-h-screen bg-[#1f1b18] text-stone-200"
+            : "light-theme min-h-screen bg-[#f1ebe1] text-stone-700"
         }
       >
         <Navbar
@@ -39,7 +39,7 @@ const App = () => {
         <Routes>
           <Route
             index
-            element={<HomePage />}
+            element={<HomePage isDarkTheme={isDarkTheme} />}
           />
 
           <Route

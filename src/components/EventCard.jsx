@@ -39,7 +39,7 @@ const EventCard = ({ event, isDarkTheme }) => {
           <span
           className={
             isDarkTheme
-            ? "mb-4 inline-block rounded-full dark:bg-rose-800/10 px-2.5 py-1 text-xs font-medium dark:text-rose-300/100"
+            ? "mb-4 inline-block rounded-full dark:bg-rose-800/10 px-2.5 py-1 text-xs font-medium dark:text-rose-300"
             : "mb-4 inline-block rounded-full bg-rose-100/70 px-2.5 py-1 text-xs font-medium text-rose-800/90"
             }
           >

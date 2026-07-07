@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { API_URL } from "../config/api";
 
 const SignUpPage = () => {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ const SignUpPage = () => {
         setIsSubmitting(true);
         
         try {
-            const response = await fetch("http://localhost:3001/api/users", {
+            const response = await fetch(`${API_URL}/api/users`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

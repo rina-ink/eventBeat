@@ -4,6 +4,8 @@ import EventCard from "../components/EventCard";
 
 import EventMap from "../components/EventMap";
 
+import { API_URL } from "../config/api";
+
 const HomePage = ({ isDarkTheme }) => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
@@ -13,7 +15,7 @@ const HomePage = ({ isDarkTheme }) => {
     const fetchEvents = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/api/events"
+          `${API_URL}/api/events`
         );
 
         if (!response.ok) {

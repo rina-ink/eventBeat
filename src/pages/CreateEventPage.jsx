@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { API_URL } from "../config/api";
 
 const CreateEventPage = () => {
     const navigate = useNavigate();
@@ -24,8 +25,7 @@ const CreateEventPage = () => {
             const token = localStorage.getItem("token");
             
             const response = await fetch(
-                "http://localhost:3001/api/events",
-                {
+                `${API_URL}/api/events`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

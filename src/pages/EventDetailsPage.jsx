@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { API_URL } from "../config/api";
 
 const EventDetailsPage = () => {
     const { id } = useParams();
@@ -13,7 +14,7 @@ const EventDetailsPage = () => {
         const fetchEvent = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3001/api/events/${id}`
+                    `${API_URL}/api/events/${id}`
                 );
                 
                 if (!response.ok) {
@@ -48,7 +49,7 @@ const EventDetailsPage = () => {
             const token = localStorage.getItem("token");
             
             const response = await fetch(
-                `http://localhost:3001/api/events/${id}`,
+                `${API_URL}/api/events/${id}`,
                 {
                     method: "DELETE",
                     headers: {

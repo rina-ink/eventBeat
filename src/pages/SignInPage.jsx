@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { API_URL } from "../config/api";
 
 const SignInPage = () => {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ const SignInPage = () => {
         
         try {
             const response = await fetch(
-                "http://localhost:3001/api/auth/login",
+                `${API_URL}/api/auth/login`,
                 {
                     method: "POST",
                     headers: {

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --watch --env-file=.env src/server.ts",
     "build": "tsc",
-    "start": "node --env-file=.env dist/server.js",
+    "start": "node dist/server.js",
     "seed": "node --env-file=.env src/seedEvents.ts"
   },
   "keywords": [],

@@ -1,4 +1,8 @@
-### EventBeat
+Here I am - developing my own sense of explaining things throughout my learning curve. I'm going to start simply, with the ***key takeaways*** and gradually explore the idea of transfer (learning & sharing). 
+
+Throughout my journey, I appreciate and seek out creative ways of explaining ideas, while continually refreshing my perspective with new research and insights.
+
+# eventBeat
 
 *A full-stack event discovery platform for exploring and managing events across Europe (for now).*
 

@@ -29,11 +29,11 @@ Features: *Browse events on an interactive Leaflet map, View event details, Crea
 
 ## Start React app - Frontend: 
 
-`npm create vite@latest events` <sub>-> downloads & runs the latest Vite version</sub>
+`npm create vite@latest events` <sub>->*downloads & runs the latest Vite version*</sub>
 
-`"type": "module",` <sub>-> add it in</sub> `package.json`
+`"type": "module",` <sub>->*add it in*</sub> `package.json`
 
-`node -v` <sub>-> to check e.g. node version</sub>
+`node -v` <sub>->*to check e.g. node version*</sub>
 
 ###### choose
 
@@ -41,17 +41,17 @@ Features: *Browse events on an interactive Leaflet map, View event details, Crea
 
 `JavaScript`
 
-##### run
+###### run
 `cd events`
 
-`npm install` <sub>->downloads all the dependencies</sub>
+`npm install` <sub>->*downloads all the dependencies*</sub>
 
-`npm run dev` <sub>->to begin development</sub>
+`npm run dev` <sub>->*to begin development*</sub>
 
 `npm install tailwindcss @tailwindcss/vite`
 
 
-#### project's structure
+##### project's structure
 
 ```text
 eventBeat/
@@ -80,33 +80,33 @@ eventBeat/
 
 `cd backend`
 
-`npm init -y` <sub>->to start a Node.js project from scratch, bye-bye to Vite in backend</sub>
+`npm init -y` <sub>->*to start a Node.js project from scratch, bye-bye to Vite in backend*</sub>
 
-`npm install express cors mongoose` <sub>->my application needs Express to build the server, CORS to allow browser requests from another origin, and Mongoose to communicate with MongoDB</sub>
+`npm install express cors mongoose` <sub>->*my application needs Express to build the server, CORS to allow browser requests from another origin, and Mongoose to communicate with MongoDB*</sub>
 
-<sub>Express → handles routes and HTTP requests</sub>
+<sub>*express → handles routes and HTTP requests*</sub>
 
-<sub>CORS → allows Vite frontend to talk to the backend</sub>
+<sub>*CORS → allows Vite frontend to talk to the backend*</sub>
 
-<sub>Mongoose → connects application to MongoDB database</sub>
+<sub>*mongoose → connects application to MongoDB database*</sub>
 
-`npm install -D typescript @types/node @types/express @types/cors` <sub>->typescript installs tsc - compiles ts into js | the rest types definitions
+`npm install -D typescript @types/node @types/express @types/cors` <sub>->*typescript installs tsc - compiles ts into js | the rest types definitions*</sub>
 
-#### to deploy
+###### to deploy
 
 `build command: npm install && npm run build`
 
 `start command: npm start`
 
-#### in backend/package.json
+###### in backend/package.json
 
-#### change/add
+###### change/add
 
 `"start": "node dist/server.js"`
 
-*tsc compiles to dist*
+<sub>*tsc compiles to dist*</sub>
 
-*start runs compiled JS*
+<sub>*start runs compiled JS*</sub>
 
 
 ![Light theme](./src/assets/light-theme.png)
